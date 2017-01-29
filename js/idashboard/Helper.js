@@ -43,3 +43,23 @@
 			}
 		}
 	};
+
+	Helper.prototype.findCookieValue = function(cookieName) {
+            var allcookies = document.cookie; 
+            
+            var pos = allcookies.indexOf(cookieName + "="); 
+
+            // Если cookie с указанным именем найден, извлечь его значения.
+            if (pos != -1) {
+                var start = pos + cookieName.length + 1;
+                var end = allcookies.indexOf(";", start); 
+
+                if (end == -1) {
+                    end = allcookies.length;
+                }
+
+                var value = allcookies.substring(start, end);
+
+                return decodeURIComponent(value);
+            }
+     };
