@@ -2,6 +2,7 @@
 		if(this.getActiveTab() != "remoteaccess"){
 			return
 		};
+		//creating HTML elements as strings
 		this.tunnelDetails = document.querySelectorAll('td.tunnel_details');
 		this.changeLoginButton = "<input type=\"button\" value=\"Change\" id=\"change\" class=\"test\">";
 		this.returnButton = "<input type=\"button\" value=\"Defualt Value\" id=\"return\" class=\"test\">";
@@ -10,22 +11,29 @@
 		this.header = "</br><label class=\"primary\">Auto Change of Tunnel Details</label></br>";
 		this.formBlock = document.querySelector("form");
 
-		this.creatinButtons();
+		//create our div in the web page
+		this.formBlock.insertAdjacentHTML('afterend', this.divBlock);
+
+		//getting the div as a HTML element
+		this.divBlocHtml = document.getElementById('insertedBlock');
+
+		//creating other buttons/inputs
+		this.creatingButtons();
+
+		this.divBlocHtml = document.getElementById('insertedBlock');
+
 		this.changingCss();
 	};
 
 	Autochange_TD.prototype = Object.create(App.prototype);
 	Autochange_TD.prototype.constructor = Autochange_TD;
 
-	Autochange_TD.prototype.creatinButtons = function (){
+	Autochange_TD.prototype.creatingButtons = function (){
 
-		this.formBlock.insertAdjacentHTML('afterend', this.divBlock);
-		var divBlocHtml = document.getElementById('insertedBlock');
-
-		divBlocHtml.insertAdjacentHTML('afterbegin', this.header);
-    	divBlocHtml.insertAdjacentHTML('beforeend', this.returnButton);
-    	divBlocHtml.insertAdjacentHTML('beforeend', this.inputField);
-    	divBlocHtml.insertAdjacentHTML('beforeend', this.changeLoginButton);
+		this.divBlocHtml.insertAdjacentHTML('afterbegin', this.header);
+    	this.divBlocHtml.insertAdjacentHTML('beforeend', this.returnButton);
+    	this.divBlocHtml.insertAdjacentHTML('beforeend', this.inputField);
+    	this.divBlocHtml.insertAdjacentHTML('beforeend', this.changeLoginButton);
 	}
 
 	Autochange_TD.prototype.changingCss = function (){
@@ -36,6 +44,10 @@
         inputFieldHtml.style.fontSize = "0.7em";
     	inputFieldHtml.style.width = "10em";
     	inputFieldHtml.style.margin = "0px 15px";
+	}
+
+	Autochange_TD.prototype.addingEvent = function (){
+
 	}
 
 	
