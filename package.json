@@ -1,0 +1,31 @@
+{
+  "name": "prism_addons",
+  "version": "0.0.1",
+  "description": "JavaScript addons for Prism services",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamusenkoAleksey/prism_addons.git"
+  },
+  "keywords": [
+    "prism",
+    "iDashboard",
+    "add-ons"
+  ],
+  "author": "Aleksey Samusenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamusenkoAleksey/prism_addons/issues"
+  },
+  "homepage": "https://github.com/SamusenkoAleksey/prism_addons#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.11"
+  }
+}
