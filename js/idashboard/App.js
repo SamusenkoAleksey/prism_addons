@@ -10,6 +10,7 @@
 	App.prototype.init = function(){
 	   this.clipBoardJs();
 	   new ClipBoard_TD();
+	   new Autochange_TD();
 	};
 
 // })();

@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('js', function () {
-    return gulp.src(['./js/idashboard/Helper.js', './js/idashboard/App.js', './js/idashboard/components/ClipBoard_TD.js'])
+    return gulp.src(['./js/idashboard/Helper.js', './js/idashboard/App.js', './js/idashboard/components/Autochange_TD.js', './js/idashboard/components/ClipBoard_TD.js'])
         .pipe(concat('bundle_js.js'))
         //.pipe(jsmin())
         //.pipe(rename({suffix: '.min'}))
@@ -17,6 +17,7 @@ gulp.task('js', function () {
 gulp.task('watch', function() {
     gulp.watch("./js/idashboard/App.js", ['js']);
     gulp.watch('./js/idashboard/Helper.js', ['js']);
+    gulp.watch('./js/idashboard/components/Autochange_TD.js', ['js']);
     gulp.watch('./js/idashboard/components/ClipBoard_TD.js', ['js']);
 });
 

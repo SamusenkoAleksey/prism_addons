@@ -4,7 +4,7 @@
 		}
 		this.tunnelDetails = document.querySelectorAll('td.tunnel_details');
 		this.setAutoClipBoard();
-		this.setNotification();
+		// this.setNotification();
 	};
 
 	ClipBoard_TD.prototype = Object.create(App.prototype);
@@ -21,21 +21,36 @@
             	currentTunnelDetailsHtml.className += " btn";
                 currentTunnelDetailsHtml.id = "id" + i;
                 currentTunnelDetailsHtml.setAttribute("data-clipboard-target", "#id" + i);
+                currentTunnelDetailsHtml.setAttribute("data-clipboard-demo", "");
             };    
 		};
 	};
 
-	ClipBoard_TD.prototype.setNotification = function() {
+	// ClipBoard_TD.prototype.setNotification = function() {
 
-		var tableContainer = document.querySelector('.table-container');
+	// 	var tableContainer = document.querySelector('.table-container');
 
-			tableContainer.addEventListener('click', this.showNotification, false);
+	// 	tableContainer.addEventListener('click', this.showNotification, false);
+	// };
 
+	// ClipBoard_TD.prototype.showNotification = function(e) {
+
+	// 	var target = e && e.target || e.srcElement,
+	// 		spanPopUp = "<span class='popuptext' id='myPopup'>A simple popup!</span>";
+
+
+
+	// 	if(target.classList.contains('btn') && !target.classList.contains('tooltipped') && !target.classList.contains('tooltipped-s')){
+	// 		//adding popup span
+	// 		target.insertAdjacentHTML('beforeend', spanPopUp);
+
+
+	// 	}else{
+	// 		return
+	// 	}
 		
-
-	};
-
-
+		
+	// }
 
 
 

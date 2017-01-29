@@ -11,7 +11,6 @@
 (function() {
     'use strict';
     
-    //asdasasd asFHG KA FGA
     var changeLoginButton = "<input type=\"button\" value=\"Change\" id=\"change\" class=\"test\">",
         returnButton = "<input type=\"button\" value=\"Defualt Value\" id=\"return\" class=\"test\">",
         inputField = "<input type=\"text\" value=\"root\" id=\"inputValue\" class=\"test\">",
