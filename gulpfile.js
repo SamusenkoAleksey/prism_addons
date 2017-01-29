@@ -7,17 +7,17 @@ var gulp = require('gulp'),
 
 
 gulp.task('js', function () {
-    return gulp.src(['./js/Helper.js', './js/App.js', './js/blocks/Test.js'])
+    return gulp.src(['./js/Helper.js', './idashboard/js//App.js', './idashboard/js/components/ClipBoard_TD.js'])
         .pipe(concat('bundle_js.js'))
         //.pipe(jsmin())
         //.pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./production/'));
+        .pipe(gulp.dest('./production/idashboard/'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch("./js/App.js", ['js']);
-    gulp.watch('./js/Helper.js', ['js']);
-    gulp.watch('./js/blocks/Test.js', ['js']);
+    gulp.watch("./idashboard/js/App.js", ['js']);
+    gulp.watch('./idashboard/js/Helper.js', ['js']);
+    gulp.watch('./idashboard/js/components/ClipBoard_TD.js', ['js']);
 });
 
 gulp.task('default', ['js', 'watch']);

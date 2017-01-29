@@ -8,12 +8,9 @@
 
 
 	App.prototype.init = function(){
-	   this.getActiveTab()
 	   this.clipBoardJs();
-
-	}
-
-    new App();
+	   new ClipBoard_TD();
+	};
 
 // })();
 
