@@ -4,9 +4,9 @@
 		};
 		//creating HTML elements as strings
 		this.tunnelDetails = document.querySelectorAll('td.tunnel_details');
-		this.changeLoginButton = "<input type=\"button\" value=\"Change\" id=\"change\" class=\"test\">";
-		this.returnButton = "<input type=\"button\" value=\"Defualt Value\" id=\"return\" class=\"test\">";
-		this.inputField = "<input type=\"text\" value=\"root\" id=\"inputValue\" class=\"test\">";
+		this.changeLoginButton = "<input type=\"button\" value=\"Change\">";
+		this.returnButton = "<input type=\"button\" value=\"Defualt Value\">";
+		this.inputField = "<input type=\"text\" value=\"root\" id=\"inputValue\">";
 		this.divBlock = "<div id=\"insertedBlock\"></div>";
 		this.header = "</br><label class=\"primary\">Auto Change of Tunnel Details</label></br>";
 		this.formBlock = document.querySelector("form");
@@ -21,8 +21,14 @@
 		this.creatingButtons();
 
 		this.divBlocHtml = document.getElementById('insertedBlock');
+		this.inputFieldHtml = document.getElementById("inputValue");
 
+		//A little bit of CSS changes....
 		this.changingCss();
+
+		//
+		this.addingEvent();
+
 	};
 
 	Autochange_TD.prototype = Object.create(App.prototype);
@@ -38,17 +44,36 @@
 
 	Autochange_TD.prototype.changingCss = function (){
 
-		var inputFieldHtml = document.getElementById("inputValue"),
-        headerElement = document.querySelector('label.primary');
-
-        inputFieldHtml.style.fontSize = "0.7em";
-    	inputFieldHtml.style.width = "10em";
-    	inputFieldHtml.style.margin = "0px 15px";
+        this.inputFieldHtml.style.fontSize = "0.7em";
+    	this.inputFieldHtml.style.width = "10em";
+    	this.inputFieldHtml.style.margin = "0px 15px";
 	}
 
 	Autochange_TD.prototype.addingEvent = function (){
 
+		this.divBlocHtml.addEventListener('click', this.buttonsEvents.bind(this), false);
 	}
+
+	Autochange_TD.prototype.buttonsEvents = function (e){
+
+		var target = e && e.target || e.srcElement,
+			value = target.value;
+
+		if(value == "Change"){
+			this.autoChangeTunnelDetails(this.inputFieldHtml.value);
+		}else if(value == "Defualt Value"){
+			this.autoChangeTunnelDetails("CAMERA_USERNAME");
+		}
+
+	}
+
+
+
+
+
+
+
+
 
 	
 	
