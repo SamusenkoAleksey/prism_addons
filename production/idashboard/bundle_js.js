@@ -154,9 +154,14 @@
 		if(this.getActiveTab() != "remoteaccess"){
 			return
 		}
-		//this.tunnelDetails = document.querySelectorAll('td.tunnel_details');
+		this.inputFieldHtml = document.getElementById("inputValue").value;
+		if(this.findCookieValue('defaultautochange') == "yes"){
+			this.autoChangeTunnelDetails(this.inputFieldHtml);
+			// this.toggleButton()
+		}
+	
 		this.questionText = "<br><label class=\"primary\">Would you like to set up changing by default ?</label>";
-		this.buttonYes = "<br><input type='button' value='Yes'>";
+		this.buttonYes = "<br><input type='button' value='Yes' id='yes'>";
 		this.buttonNo = "<input type='button' value='No'>";
 		this.divBlocHtml = document.getElementById('insertedBlock');
 
@@ -187,10 +192,16 @@
 
 			if(value == "Yes"){
 				document.cookie = "defaultautochange=yes; max-age=604800";
+				location.reload();
 			}else if(value == "No"){
 				document.cookie = "defaultautochange=no; max-age=604800";
+				location.reload();
 			}
 	}
+
+	// Default_AutoChange_TD.prototype.toggleButton = function (chosenButton){
+	// 	chosenButton.style.cssText = "backgroundColor: blue";
+	// }
 
 
 
