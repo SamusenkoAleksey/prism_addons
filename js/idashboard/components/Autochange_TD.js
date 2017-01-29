@@ -65,15 +65,4 @@
 			this.autoChangeTunnelDetails("CAMERA_USERNAME");
 		}
 
-	}
-
-
-
-
-
-
-
-
-
-	
-	
+	};

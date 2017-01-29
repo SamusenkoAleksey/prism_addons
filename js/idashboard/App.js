@@ -11,6 +11,7 @@
 	   this.clipBoardJs();
 	   new ClipBoard_TD();
 	   new Autochange_TD();
+	   new Default_AutoChange_TD();
 	};
 
 // })();
