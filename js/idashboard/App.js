@@ -10,8 +10,8 @@
 	App.prototype.init = function(){
 	   this.clipBoardJs();
 	   new ClipBoard_TD();
-	   new Autochange_TD();
-	   new Default_AutoChange_TD();
+	   new Mass_Change_TD();
+	   new Auto_Change_TD();
 	};
 
 // })();

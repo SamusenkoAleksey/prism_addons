@@ -1,5 +1,5 @@
 	function ClipBoard_TD(){
-		if(this.getActiveTab() != "remoteaccess"){
+		if(this.getCurrentWebAddress('active tab') != "remoteaccess" || this.getCurrentWebAddress('after active tab') == 'conn'){
 			return
 		}
 		this.tunnelDetails = document.querySelectorAll('td.tunnel_details');
