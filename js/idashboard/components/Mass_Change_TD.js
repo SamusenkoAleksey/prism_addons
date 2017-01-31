@@ -1,7 +1,9 @@
 	function Mass_Change_TD(){
-		if(this.getActiveTab() != "remoteaccess" || this.getCurrentWebAddress('after active tab') == 'conn'){
+		if(this.getCurrentWebAddress("active tab") != "remoteaccess" || !isNaN(parseInt(this.getCurrentWebAddress('after active tab'))) == true || this.getCurrentWebAddress('after active tab') == "conn"){
 			return
 		};
+		// console.log();
+		
 		//creating HTML elements as strings
 		this.tunnelDetails = document.querySelectorAll('td.tunnel_details');
 		this.changeLoginButton = "<input type=\"button\" value=\"Change\">";
