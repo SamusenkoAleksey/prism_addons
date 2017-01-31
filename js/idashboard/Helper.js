@@ -4,16 +4,6 @@
 		
 	};
 
-	Helper.prototype.getActiveTab = function() {
-
-		var currentWebAddres = window.location.href,
-			splittedWebAddress = currentWebAddres.split("/"),
-			activeTab = splittedWebAddress[3];
-			
-			return activeTab;
-
-	};
-
 	Helper.prototype.getCurrentWebAddress = function (elementOfWebAddress){
 
 		var currentWebAddres = window.location.href,
@@ -23,6 +13,7 @@
 				return splittedWebAddress[3];
 			}else if(elementOfWebAddress == 'after active tab'){
 				return splittedWebAddress[4];
+				
 			}else{
 				return currentWebAddres;
 			}
